@@ -1,5 +1,17 @@
 # satRdays
 
+## update R
+
+```bash
+sudo echo "deb deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" >> /etc/apt/sources.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+apt-get update
+apt-get upgrade
+
+sudo apt install libxml2-dev
+sudo apt install libcurl4-openssl-dev
+```
+
 ## demo1
 
 ```r
@@ -72,11 +84,11 @@ saveRDS(model_knn, "data/model_knn.rds")
 [http://127.0.0.1:8090]()
 
 ```bash
-curl --header "Content-Type: application/json" --request POST --data 'hello satRdays' http://localhost:9092/predict/
+curl --header "Content-Type: application/json" --request POST --data 'hello satRdays' http://localhost:8090/predict/
 ```
 
 ```bash
-curl --header "Content-Type: application/json" --request POST --data @test.json http://localhost:9092/predict/
+curl --header "Content-Type: application/json" --request POST --data @test.json http://localhost:8090/predict/
 ```
 
 ```bash
